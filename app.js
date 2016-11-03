@@ -85,6 +85,10 @@ function randomImages(event) {
     counter++;
     console.log(counter);
   }
+  else {
+    renderChart();
+    images.removeEventListener;
+  }
 }
 
 for (var i = 0; i < images.length; i++){
@@ -98,6 +102,56 @@ function clickImage(event) {
     }
   }
 }
+var buyerData = {
+  labels : ['January','February','March','April','May','June'],
+  datasets : [
+    {
+      fillColor : 'rgba(172,194,132,0.4)',
+      strokeColor : '#ACC26D',
+      pointColor : '#fff',
+      pointStrokeColor : '#9DB86D',
+      data : [203,156,99,251,305,247]
+    }
+  ]
+};
+//'rgba(255, 206, 86, 1)', green. for later use
+function renderChart() {
+  var labels = [];
+  var clickData = [];
+  var colors = [];
+  var borderColors = [];
+  for (var i = 0; i < productArray.length; i++) {
+    labels[i] = productArray[i].productName;
+    clickData[i] = productArray[i].timesClicked;
+    colors[i] = 'rgba(255, 99, 132, 0.2)';
+    borderColors[i] = 'rgba(255,99,132,1)';
+  }
+  var ctx = document.getElementById('buyers').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Product Picks',
+        data: clickData,
+        backgroundColor: colors,
+        borderColor:
+        borderColors,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
+}
+
 
 // function setImageAttributes() {
 //   for (var i = 0; i < document.getElementsByClassName('products').length; i++) {
