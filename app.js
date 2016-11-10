@@ -69,7 +69,9 @@ function randomImages(event) {
     renderChart();
     localStorage.setItem('counter', JSON.stringify(counter));
     localStorage.setItem('productArray', JSON.stringify(productArray));
-    images.removeEventListener;
+    for (var i = 0; i < images.length; i++){
+      images[i].addEventListener('click', randomImages);
+    };
   }
 }
 
