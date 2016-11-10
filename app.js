@@ -68,7 +68,6 @@ function randomImages(event) {
   else {
     renderChart();
     localStorage.setItem('counter', JSON.stringify(counter));
-    var tent = JSON.stringify(productArray);
     localStorage.setItem('productArray', JSON.stringify(productArray));
     images.removeEventListener;
   }
@@ -87,18 +86,6 @@ function clickImage(event) {
     }
   }
 }
-var buyerData = {
-  labels : ['January','February','March','April','May','June'],
-  datasets : [
-    {
-      fillColor : 'rgba(172,194,132,0.4)',
-      strokeColor : '#ACC26D',
-      pointColor : '#fff',
-      pointStrokeColor : '#9DB86D',
-      data : [203,156,99,251,305,247]
-    }
-  ]
-};
 
 function renderChart() {
   var labels = [];
@@ -135,13 +122,4 @@ function renderChart() {
       }
     }
   });
-}
-
-function saveData() {
-  if (!supportsLocalStorage()) { return false; }
-  localStorage['product data'] = productData;
-  for (var i = 0; i < productArray.length; i++) {
-    localStorage['product shown'] = productArray[i].timesShown;
-    localStorage['product clicks'] = productArray[i].timesClicked;
-  }
 }
