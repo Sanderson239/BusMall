@@ -1,3 +1,54 @@
 .products {
   width: 20%;
+  height: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border: 3px solid black;
+}
+
+main {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+header p {
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  line-height: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+header h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
+#buyers {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.images {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  text-align: center;
+}
+
+.result {
+  text-align: center;
+}
+
+
+body {
+  background-color:#ADD8E6;
+  border: solid grey;
+}
+
+#canvas {
+  height: 200px;
+  width: 400px;
 }

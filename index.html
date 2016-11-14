@@ -2,18 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Product Survey</title>
 
   </head>
-  <body>  
-    <img class="products" src="images/bag.jpg" alt="bag">
-    <img class="products" src="images/banana.jpg" alt="banana">
-    <img class="products" src="images/breakfast.jpg" alt="breakfast">
-
-
-
-    <canvas id="buyers" width="600" height="400"></canvas>
+  <body>
+    <header>
+      <h1>BusMall Survey</h1>
+      <p>
+        Welcome to the BusMall survey! Select your favorite product from each set of some of our finest products we have to offer.
+        You will be presented with 25 sets of products and be rewarded with a fine graph for all your effort.
+      </p>
+    </header>
+    <main>
+      <div class="images">
+        <img class="products" src="images/bag.jpg" alt="bag">
+        <img class="products" src="images/banana.jpg" alt="banana">
+        <img class="products" src="images/breakfast.jpg" alt="breakfast">
+      </div>
+      <h3 class="result">The green bar represents the product/s you picked the most</h2>
+    </main>
+    <hr></hr>
+    <canvas id="buyers"></canvas>
 
     <script type="text/javascript" src="Chart.js"></script>
     <script type="text/javascript" src="app.js"></script>

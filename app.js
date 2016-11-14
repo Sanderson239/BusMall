@@ -9,6 +9,8 @@ var productArray;
 if (localStorage.getItem('productArray')) {
   productArray = JSON.parse(localStorage.getItem('productArray'));
 }
+
+
 else {
   productArray = [
     new Product('bag', 'images/bag.jpg'),
@@ -35,7 +37,7 @@ else {
 }
 var oldProductIndexes = [];
 var images = document.getElementsByClassName('products');
-
+var topPicks = productArray[0].timesClicked;
 
 
 function Product(productName, filepath) {
@@ -89,7 +91,26 @@ function clickImage(event) {
   }
 }
 
+function topPick() {
+  for (var i = 1; i < productArray.length; i++) {
+    var j = i - 1;
+    if (topPicks < productArray[i].timesClicked) {
+      topPicks = productArray[i].timesClicked;
+      console.log(topPicks);
+      j++;
+
+
+    }
+    else {
+      console.log(topPicks);
+      j++;
+
+    }
+  }
+}
+
 function renderChart() {
+  topPick();
   var labels = [];
   var clickData = [];
   var colors = [];
@@ -97,8 +118,14 @@ function renderChart() {
   for (var i = 0; i < productArray.length; i++) {
     labels[i] = productArray[i].productName;
     clickData[i] = productArray[i].timesClicked;
-    colors[i] = 'rgba(255, 99, 132, 0.2)';
-    borderColors[i] = 'rgba(255,99,132,1)';
+    if (clickData[i] != topPicks) {
+      colors[i] = 'rgba(255, 99, 132, 0.2)';
+      borderColors[i] = 'rgba(255,99,132,1)';
+    }
+    else {
+      colors[i] = 'rgba(0,255,0,0.2)';
+      borderColors[i] = 'rgba(0,255,0,1)';
+    }
   }
   var ctx = document.getElementById('buyers').getContext('2d');
   var myChart = new Chart(ctx, {
